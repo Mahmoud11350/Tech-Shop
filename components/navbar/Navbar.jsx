@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IoBagHandleSharp } from "react-icons/io5";
+import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
   return (
@@ -8,12 +9,13 @@ const Navbar = () => {
         <IoBagHandleSharp className="" />
         tech shop
       </div>
-      <ul className="flex gap-4 capitalize ">
+      <MobileNavbar />
+      <ul className=" gap-4 capitalize hidden md:flex">
         <li className="btn btn-ghost text-md">
           <Link href={"/"}>home</Link>
         </li>
         <li className="btn btn-ghost text-md">
-          <Link href={"/"}>shop </Link>
+          <Link href={"/products"}>shop </Link>
         </li>
         <li className="btn btn-primary text-md text-white">
           <Link href={"/"}>login</Link>

@@ -5,26 +5,26 @@ import supportIcon from "@/assets/images/icons/support.svg";
 import Image from "next/image";
 const Features = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 container">
-      <div>
-        <div>
+    <section className="grid grid-cols-1 md:grid-cols-2 container gap-4">
+      <div className="flex flex-col items-center">
+        <div className="min-w-60">
           <Image src={shippingIcon} className="font-bold w-12 my-4" />
           <h3 className=" text-2xl font-bold">Free Shipping</h3>
           <p>Free shipping for order above $150</p>
         </div>
-        <div>
+        <div className="min-w-60">
           <Image src={supportIcon} className="font-bold w-12 my-4" />
           <h3 className=" text-2xl font-bold">Online Support</h3>
           <p>24 hours a day, 7 days a week</p>
         </div>
       </div>
-      <div>
-        <div>
+      <div className="flex flex-col items-center">
+        <div className="min-w-60">
           <Image src={purchasesIcon} className="font-bold w-12 my-4" />
           <h3 className=" text-2xl font-bold">Money Guarantee</h3>
           <p>Within 30 days for an exchange</p>
         </div>
-        <div>
+        <div className="min-w-60">
           <Image src={paymentIcon} className="font-bold w-12 my-4" />
           <h3 className=" text-2xl font-bold">Flexible Payment</h3>
           <p>Pay with multiple credit cards</p>

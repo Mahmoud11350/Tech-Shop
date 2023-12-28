@@ -10,7 +10,7 @@ const Footer = () => {
           &#169; 2023 Tech Shop. All Rights are reserved
         </div>
         <div className="">
-          <ul className="flex items-center gap-4 ">
+          <ul className="flex items-center gap-4 justify-center">
             <li className="flex items-center gap-4 text-center">
               <Image src={facebookIcon} />
               <a href="https://www.facebook.com/profile.php?id=100012477769227"></a>
