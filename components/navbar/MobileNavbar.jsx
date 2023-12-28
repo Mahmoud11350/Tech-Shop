@@ -7,15 +7,14 @@ import { useState } from "react";
 const MobileNavbar = () => {
   const [visible, setVisible] = useState(false);
   return (
-    <div className="md:hidden  ">
+    <div className="md:hidden">
       <Image
         src={menuIcon}
-        className="w-16"
+        className="w-16 cursor-pointer"
         onClick={() => setVisible(!visible)}
       />
-
       <ul
-        className={`flex flex-col absolute top-24 w-screen left-0  z-20 bg-accent/25  h-40 items-center justify-center transition-[all_1s] ${
+        className={`flex flex-col absolute top-24 w-screen z-20 bg-accent/25  h-40 items-center justify-center transition-[all_1s] ${
           visible ? "left-0" : "-left-[100vw]"
         }`}
       >
