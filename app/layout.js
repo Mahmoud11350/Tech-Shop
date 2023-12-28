@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   connectDB();
   return (
     <html lang="en">
-      <body className={"font-jost overflow-hidden"}>
+      <body className={"font-jost overflow-x-hidden"}>
         <Navbar />
         {children}
       </body>

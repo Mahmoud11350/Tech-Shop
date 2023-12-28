@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[calc(100vh-100px)] bg-[#F3F3F3]">
+    <section className="relative w-full h-[calc(100vh-300px)] lg:h-[calc(100vh-100px)] bg-[#F3F3F3]">
       <Image src={heroImg} alt="Hero Img" fill className="absolute" />
-      <div className="container">
-        <div className=" absolute top-1/2 -translate-y-1/2">
+      <div className="container ">
+        <div className=" absolute top-1/2 -translate-y-1/2  text-center md:text-left">
           <h1 className=" text-4xl md:text-5xl lg:text-7xl text-primary font-bold">
             Unleash Innovation <br /> in Every Byte.
           </h1>

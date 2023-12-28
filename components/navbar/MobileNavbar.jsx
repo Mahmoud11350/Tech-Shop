@@ -5,10 +5,14 @@ import Link from "next/link";
 
 import { useState } from "react";
 const MobileNavbar = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   return (
     <div className="md:hidden  ">
-      <Image src={menuIcon} onClick={() => setVisible(!visible)} />
+      <Image
+        src={menuIcon}
+        className="w-16"
+        onClick={() => setVisible(!visible)}
+      />
 
       <ul
         className={`flex flex-col absolute top-24 w-screen left-0  z-20 bg-accent/25  h-40 items-center justify-center transition-[all_1s] ${
