@@ -19,7 +19,7 @@ const Navbar = () => {
             <Link href={"/products"}>shop </Link>
           </li>
           <li className="btn btn-primary text-md text-white">
-            <Link href={"/"}>login</Link>
+            <Link href={"/login"}>login</Link>
           </li>
         </ul>
       </div>

@@ -29,7 +29,7 @@ const MobileNavbar = () => {
           </Link>
         </li>
         <li  onClick={() => setVisible(!visible)}>
-          <Link href={"/"} className="btn btn-primary text-md capitalize">
+          <Link href={"/login"} className="btn btn-primary text-md capitalize">
             login
           </Link>
         </li>
