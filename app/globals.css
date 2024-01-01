@@ -5,7 +5,7 @@
 
 @layer base {
   section {
-    @apply pt-20 pb-20;
+    @apply pt-20 pb-20 px-4;
   }
 }
 
