@@ -18,17 +18,25 @@ const MobileNavbar = () => {
           visible ? "left-0" : "-left-[100vw]"
         }`}
       >
-        <li  onClick={() => setVisible(!visible)}>
+        <li onClick={() => setVisible(!visible)}>
           <Link href={"/"} className="btn btn-ghost text-md capitalize">
             home
           </Link>
         </li>
-        <li  onClick={() => setVisible(!visible)}>
-          <Link href={"/products"} className="btn btn-ghost text-md capitalize">
+        <li onClick={() => setVisible(!visible)}>
+          <Link
+            href={{
+              pathname: "/products",
+              query: {
+                category: "all",
+              },
+            }}
+            className="btn btn-ghost text-md capitalize"
+          >
             shop{" "}
           </Link>
         </li>
-        <li  onClick={() => setVisible(!visible)}>
+        <li onClick={() => setVisible(!visible)}>
           <Link href={"/login"} className="btn btn-primary text-md capitalize">
             login
           </Link>

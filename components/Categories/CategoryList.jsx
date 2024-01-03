@@ -44,9 +44,17 @@ const CategoryList = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 capitalize text-center gap-4">
         {categories.map((category) => {
           return (
-            <div key={category.name}>
+            <Link
+              href={{
+                pathname: "/products",
+                query: {
+                  category: category.name,
+                },
+              }}
+              key={category.name}
+            >
               <CategoryItem name={category.name} image={category.image} />
-            </div>
+            </Link>
           );
         })}
       </div>

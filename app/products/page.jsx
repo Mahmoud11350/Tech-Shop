@@ -1,15 +1,18 @@
+import CategoryFilter from "@/components/Categories/CategoryFilter";
 import CollectionItem from "@/components/collections/CollectionItem";
 import Features from "@/components/features/Features";
 import Footer from "@/components/footer/Footer";
-import { getAllProducts } from "@/server/controllers/productControllers";
+import { getFillteredProducts } from "@/server/controllers/productControllers";
 
-const Products = async () => {
-  const products = await getAllProducts();
+const Products = async ({ searchParams }) => {
+  const products = await getFillteredProducts({ searchParams });
 
   return (
     <>
-      <section>
-        <div className="container">
+      <section className="container">
+        <h1 className="font-bold text-3xl mb-4">Products</h1>
+        <div className=" grid grid-cols-1 lg:grid-cols-[150px_1fr] gap-4 ">
+          <CategoryFilter searchParams={searchParams} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => {
               const { name, image, description, price, _id } = product;
@@ -25,9 +28,9 @@ const Products = async () => {
               );
             })}
           </div>
-          <Features />
         </div>
       </section>
+      <Features />
       <Footer />
     </>
   );

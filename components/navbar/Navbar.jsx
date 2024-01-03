@@ -16,7 +16,16 @@ const Navbar = () => {
             <Link href={"/"}>home</Link>
           </li>
           <li className="btn btn-ghost text-md">
-            <Link href={"/products"}>shop </Link>
+            <Link
+              href={{
+                pathname: "/products",
+                query: {
+                  category: "all",
+                },
+              }}
+            >
+              shop{" "}
+            </Link>
           </li>
           <li className="btn btn-primary text-md text-white">
             <Link href={"/login"}>login</Link>
