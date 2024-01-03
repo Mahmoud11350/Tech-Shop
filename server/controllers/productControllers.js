@@ -1,6 +1,8 @@
+import { connectDB } from "../db/connect";
 import Product from "../model/Product";
 
 export const getFillteredProducts = async ({ searchParams }) => {
+  connectDB();
   if (searchParams.category == "all") {
     return await Product.find();
   }
@@ -9,11 +11,15 @@ export const getFillteredProducts = async ({ searchParams }) => {
 };
 
 export const getAllProducts = async () => {
+  connectDB();
+
   const products = await Product.find();
   return products;
 };
 
 export const getSingleProduct = async (productId) => {
+  connectDB();
+
   const product = await Product.findOne({ _id: productId });
   const productCategory = await Product.find({
     category: product.category,
