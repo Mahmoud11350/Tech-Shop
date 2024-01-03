@@ -1,6 +1,6 @@
-require("dotenv").config();
-const { connect } = require("mongoose");
+// require("dotenv").config();
+// const { connect } = require("mongoose");
 
-const connectDB = async () => await connect(process.env.MONGO_URL);
+// const connectDB = async () => await connect(process.env.MONGO_URL);
 
-module.exports = connectDB;
+// module.exports = connectDB;
