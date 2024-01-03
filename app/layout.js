@@ -1,4 +1,4 @@
-import connectDB from "@/server/db/connect";
+import { connectDB } from "@/server/db/connect";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 
