@@ -5,7 +5,7 @@ import MobileNavbar from "./MobileNavbar";
 const Navbar = () => {
   return (
     <nav className="relative">
-      <div className="container flex h-[100px] justify-between items-center">
+      <div className="container flex h-[80px] justify-between items-center">
         <div className="uppercase font-bold text-2xl flex items-center gap-2">
           <IoBagHandleSharp className="" />
           tech shop

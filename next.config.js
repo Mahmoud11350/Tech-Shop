@@ -11,3 +11,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// mongodb+srv://mahmoudsalah11350:Ss3236113@tech-shop.mn9hfhl.mongodb.net/

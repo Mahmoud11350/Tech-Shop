@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[calc(100vh-300px)] lg:h-[calc(100vh-100px)] bg-[#F3F3F3]">
+    <section className="relative w-full h-[calc(100vh-300px)] lg:h-[calc(100vh-80px)] bg-[#F3F3F3]">
       <Image src={heroImg} alt="Hero Img" fill className="absolute" />
       <div className="container ">
         <div className=" absolute top-1/2 -translate-y-1/2  text-center md:text-left">
