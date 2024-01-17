@@ -1,10 +1,21 @@
+"use client";
+import { addToCart } from "@/server/controllers/cartControllers";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
-const SingleProduct = ({ product }) => {
+const SingleProduct = ({ product, userId }) => {
   const { name, price, category, description, availability, image, _id } =
     product;
+  const addToCartHandler = async () => {
+    if (!userId) {
+      return redirect("/sign-in");
+    }
+    const cartItem = { productId: _id, userId };
+    await addToCart(cartItem);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center ">
       <div className="relative rounded-lg bg-accent flex justify-center items-center w-3/4 mx-auto">
@@ -31,6 +42,7 @@ const SingleProduct = ({ product }) => {
         <Link
           href={"/cart"}
           className="btn btn-primary btn-block mt-4 text-white text-lg "
+          onClick={addToCartHandler}
         >
           Add to cart
         </Link>
