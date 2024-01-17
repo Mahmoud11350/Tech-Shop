@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IoBagHandleSharp } from "react-icons/io5";
 import MobileNavbar from "./MobileNavbar";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
           tech shop
         </div>
         <MobileNavbar />
-        <ul className=" gap-4 capitalize hidden md:flex">
+        <ul className=" gap-4 capitalize hidden md:flex items-center">
           <li className="btn btn-ghost text-md">
             <Link href={"/"}>home</Link>
           </li>
@@ -27,9 +28,16 @@ const Navbar = () => {
               shop{" "}
             </Link>
           </li>
-          <li className="btn btn-primary text-md text-white">
-            <Link href={"/login"}>login</Link>
+          <li>
+            <SignedIn>
+              <UserButton afterSignOutUrl="/" showName />
+            </SignedIn>
           </li>
+          <SignedOut>
+            <li className="btn btn-primary text-md text-white">
+              <Link href={"/sign-in"}>login</Link>
+            </li>
+          </SignedOut>
         </ul>
       </div>
     </nav>

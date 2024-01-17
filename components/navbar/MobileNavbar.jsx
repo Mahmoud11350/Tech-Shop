@@ -1,5 +1,6 @@
 "use client";
 import menuIcon from "@/assets/images/icons/menu.svg";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +15,7 @@ const MobileNavbar = () => {
         onClick={() => setVisible(!visible)}
       />
       <ul
-        className={`flex flex-col absolute top-24 w-screen z-20 bg-accent/25  h-40 items-center justify-center transition-[all_1s] ${
+        className={`flex text-white flex-col absolute top-20 w-screen z-20 bg-black/90  h-40 items-center justify-center transition-[all_1s] ${
           visible ? "left-0" : "-left-[100vw]"
         }`}
       >
@@ -36,11 +37,21 @@ const MobileNavbar = () => {
             shop{" "}
           </Link>
         </li>
-        <li onClick={() => setVisible(!visible)}>
-          <Link href={"/login"} className="btn btn-primary text-md capitalize">
-            login
-          </Link>
-        </li>
+        <SignedIn>
+          <li className="text-white">
+            <UserButton afterSignOutUrl="/" />
+          </li>
+        </SignedIn>
+        <SignedOut>
+          <li onClick={() => setVisible(!visible)}>
+            <Link
+              href={"/login"}
+              className="btn btn-primary text-md capitalize"
+            >
+              login
+            </Link>
+          </li>
+        </SignedOut>
       </ul>
     </div>
   );

@@ -1,31 +1,43 @@
+"use server";
+import { SignOutButton } from "@clerk/nextjs";
 import { connectDB } from "../db/connect";
 import Product from "../model/Product";
 
 export const getFillteredProducts = async ({ searchParams }) => {
-  connectDB();
-  if (searchParams.category == "all") {
-    return await Product.find();
+  try {
+    connectDB();
+    if (searchParams.category == "all") {
+      return await Product.find();
+    }
+    const products = await Product.find(searchParams);
+    return JSON.parse(JSON.stringify(products));
+  } catch (error) {
+    console.log(error);
   }
-  const products = await Product.find(searchParams);
-  return products;
 };
 
 export const getAllProducts = async () => {
-  connectDB();
+  try {
+    connectDB();
 
-  const products = await Product.find();
-  return products;
+    const products = await Product.find();
+    return JSON.parse(JSON.stringify(products));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getSingleProduct = async (productId) => {
-  connectDB();
+  try {
+    connectDB();
 
-  const product = await Product.findOne({ _id: productId });
-  const productCategory = await Product.find({
-    category: product.category,
-  });
-  const relatedProducts = productCategory.filter(
-    (product) => product._id != productId
-  );
-  return { product, relatedProducts };
+    const product = await Product.findOne({ _id: productId });
+    const productCategory = await Product.find({
+      category: product.category,
+    });
+    const relatedProducts = productCategory.filter(
+      (product) => product._id != productId
+    );
+    return JSON.parse(JSON.stringify({ product, relatedProducts }));
+  } catch (error) {}
 };

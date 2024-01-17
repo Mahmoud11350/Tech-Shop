@@ -11,9 +11,12 @@ const LoginForm = () => {
       <form action="" className="w-full mt-4">
         <FormRow type={"email"} name={"email"} label={"email adress"} />
         <FormRow type={"password"} name={"password"} label={"password"} />
-        <button className="btn btn-primary btn-wide  text-white text-lg mt-5">
+        <Link
+          href={"/"}
+          className="btn btn-primary btn-wide  text-white text-lg mt-5"
+        >
           Login
-        </button>
+        </Link>
       </form>
     </div>
   );

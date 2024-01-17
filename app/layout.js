@@ -1,6 +1,7 @@
 import { connectDB } from "@/server/db/connect";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
   title: "Tech Shop",
@@ -10,11 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   connectDB();
   return (
-    <html lang="en">
-      <body className={"font-jost overflow-x-hidden"}>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={"font-jost overflow-x-hidden"}>
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
