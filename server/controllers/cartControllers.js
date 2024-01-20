@@ -1,5 +1,6 @@
 "use server";
 
+import { connectDB } from "../db/connect";
 import Cart from "../model/cart";
 
 export const addToCart = async (newCartItem) => {
@@ -23,3 +24,17 @@ export const getCart = async () => {
     console.log(error);
   }
 };
+
+export const getUserCart = async(userId) => {
+  try {
+    connectDB()
+    const cart = await Cart.find({
+      userId
+    }).populate({
+      path:"productId"
+    })
+    return JSON.parse(JSON.stringify(cart));
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -7,8 +7,9 @@ import React from "react";
 
 const SingleProduct = ({ product, userId }) => {
   const { name, price, category, description, availability, image, _id } =
-    product;
+  product;
   const addToCartHandler = async () => {
+
     if (!userId) {
       return redirect("/sign-in");
     }

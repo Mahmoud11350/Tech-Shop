@@ -7,7 +7,11 @@ import { auth } from "@clerk/nextjs";
 
 const Product = async ({ params }) => {
   const { sessionClaims } = auth();
-  const { userId } = sessionClaims;
+
+  let userId ;
+  if (sessionClaims) {
+    userId = sessionClaims?.userId
+  }
   const singleProduct = await getSingleProduct(params.productId);
   return (
     <>
