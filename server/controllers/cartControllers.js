@@ -20,18 +20,6 @@ export const addToCart = async (newCartItem) => {
   }
 };
 
-export const getCart = async () => {
-  try {
-    const cart = await Cart.find().populate({
-      path: "productId",
-    });
-
-    return JSON.parse(JSON.stringify(cart));
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 export const getUserCart = async (userId) => {
   try {
     connectDB();

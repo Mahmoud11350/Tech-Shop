@@ -10,21 +10,36 @@ const Cart = async () => {
   const cart = await getUserCart(userId);
 
   return (
-    <section className="container ">
-      <h1 className="text-3xl font-bold ">Cart</h1>
-      {cart.length == 0 && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-          <h1 className="text-2xl font-bold ">No Product In Cart </h1>
-          <Link
-            href={"/products"}
-            className="btn btn-primary  text-white mt-4 btn-lg"
-          >
-            Fill It
-          </Link>
-        </div>
-      )}
-      <CartWrapper cart={cart} />
-    </section>
+    <>
+      <section className="container ">
+        <h1 className="text-3xl font-bold ">Cart</h1>
+        {cart.length == 0 && (
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+            <h1 className="text-2xl font-bold ">No Product In Cart </h1>
+            <Link
+              href={"/products"}
+              className="btn btn-primary  text-white mt-4 btn-lg"
+            >
+              Fill It
+            </Link>
+          </div>
+        )}
+        <CartWrapper cart={cart} />
+      </section>
+      <div className="text-center">
+        <Link
+          href={{
+            pathname: "/products",
+            query: {
+              category: "all",
+            },
+          }}
+          className="text-center btn btn-primary btn-lg mx-auto"
+        >
+          Continue Shopping
+        </Link>
+      </div>
+    </>
   );
 };
 export default Cart;
