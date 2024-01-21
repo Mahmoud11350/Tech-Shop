@@ -30,6 +30,11 @@ const Navbar = () => {
           </li>
           <li>
             <SignedIn>
+              <Link href={"/cart"}>Cart </Link>
+            </SignedIn>
+          </li>
+          <li>
+            <SignedIn>
               <UserButton afterSignOutUrl="/" showName />
             </SignedIn>
           </li>

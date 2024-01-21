@@ -37,6 +37,11 @@ const MobileNavbar = () => {
             shop{" "}
           </Link>
         </li>
+        <li onClick={() => setVisible(!visible)}>
+          <SignedIn>
+            <Link href={"/cart"}>Cart </Link>
+          </SignedIn>
+        </li>
         <SignedIn>
           <li className="text-white">
             <UserButton afterSignOutUrl="/" />
